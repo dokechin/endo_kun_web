@@ -31,6 +31,6 @@ $().ready(function(){
             ctx.drawImage(video, 0, 0, 400, 300);
             var data = canvas.get()[0].toDataURL('image/jpeg');
             ws.send(data);
-        }, 2000
+        }, 5000
     );
 });
