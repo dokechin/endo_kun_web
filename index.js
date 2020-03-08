@@ -32,7 +32,9 @@ app.ws('/ws', function(ws, req) {
 		var input = uniqueFilename(os.tmpdir()) + 'jpg'
 		var output = uniqueFilename(os.tmpdir()) + '.jpg'
         fs.writeFile(input, base64Data, 'base64', function(err) {
+			console.log("detect call start" + new Date().toString());
 			var result = darknet.detect(input,{thresh: 0.1})
+			console.log("detect call end" + new Date().toString());
 			console.log(result)
 			const img = cv.imread(input);
 			result.forEach((s, i) => {
