@@ -1,7 +1,7 @@
 $().ready(function(){
     var location = window.location;
     console.log(location);
-    const type = location.protocol.startsWith('http') ? 'ws' : 'wss';
+    const type = location.protocol.startsWith('https') ? 'wss' : 'ws';
     var ws = new WebSocket(type + "://" + location.host + "/ws");
     ws.onmessage = function (msg) {
         var target = document.getElementById("target");
